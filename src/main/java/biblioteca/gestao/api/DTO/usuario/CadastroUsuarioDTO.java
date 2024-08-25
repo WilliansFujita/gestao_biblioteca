@@ -1,11 +1,8 @@
-package biblioteca.gestao.api.DTO;
+package biblioteca.gestao.api.DTO.usuario;
 
-import biblioteca.gestao.api.model.Telefone;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
-import java.util.Date;
 
 public record CadastroUsuarioDTO(
 

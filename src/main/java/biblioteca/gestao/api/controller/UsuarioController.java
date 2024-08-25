@@ -1,8 +1,8 @@
 package biblioteca.gestao.api.controller;
 
-import biblioteca.gestao.api.DTO.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.DTO.CadastroUsuarioDTO;
-import biblioteca.gestao.api.DTO.ListarUsuarioDTO;
+import biblioteca.gestao.api.DTO.usuario.AtualizaUsuarioDTO;
+import biblioteca.gestao.api.DTO.usuario.CadastroUsuarioDTO;
+import biblioteca.gestao.api.DTO.usuario.ListarUsuarioDTO;
 import biblioteca.gestao.api.model.Usuario;
 import biblioteca.gestao.api.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;

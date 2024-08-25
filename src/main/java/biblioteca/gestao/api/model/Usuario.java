@@ -1,13 +1,11 @@
 package biblioteca.gestao.api.model;
 
-import biblioteca.gestao.api.DTO.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.DTO.CadastroUsuarioDTO;
+import biblioteca.gestao.api.DTO.usuario.AtualizaUsuarioDTO;
+import biblioteca.gestao.api.DTO.usuario.CadastroUsuarioDTO;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.*;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Table(name = "usuarios")
 @Entity(name = "Usuario")

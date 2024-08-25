@@ -1,4 +1,4 @@
-package biblioteca.gestao.api.DTO;
+package biblioteca.gestao.api.DTO.usuario;
 
 import biblioteca.gestao.api.model.Telefone;
 import biblioteca.gestao.api.model.Usuario;

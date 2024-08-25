@@ -1,6 +1,4 @@
-package biblioteca.gestao.api.DTO;
-
-import jakarta.validation.constraints.NotNull;
+package biblioteca.gestao.api.DTO.usuario;
 
 public record AtualizaUsuarioDTO(
         String nome,
