@@ -1,7 +1,9 @@
 package biblioteca.gestao.api.model;
 
+import biblioteca.gestao.api.DTO.AtualizaUsuarioDTO;
 import biblioteca.gestao.api.DTO.CadastroUsuarioDTO;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 
 import java.util.Date;
@@ -21,6 +23,7 @@ public class Usuario {
     private String nome;
     private String email;
     private Date dataCadastro;
+    private boolean ativo;
 
     @Embedded
     private Telefone telefone;
@@ -31,6 +34,22 @@ public class Usuario {
         usuario.dataCadastro = new Date();
         usuario.email = usuarioDTO.email();
         usuario.telefone = Telefone.from(usuarioDTO.telefone());
+        usuario.ativo = true;
         return usuario;
+    }
+
+    public void atualizar(AtualizaUsuarioDTO usuarioDTO) {
+        if(usuarioDTO.nome()!=null)
+            this.nome = usuarioDTO.nome();
+
+        if(usuarioDTO.email() != null)
+            this.email = usuarioDTO.email();
+
+        if(usuarioDTO.telefone()!=null)
+            this.telefone.atualizarTelefone(usuarioDTO.telefone());
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }

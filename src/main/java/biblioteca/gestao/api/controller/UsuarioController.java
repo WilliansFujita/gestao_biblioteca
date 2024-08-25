@@ -1,5 +1,6 @@
 package biblioteca.gestao.api.controller;
 
+import biblioteca.gestao.api.DTO.AtualizaUsuarioDTO;
 import biblioteca.gestao.api.DTO.CadastroUsuarioDTO;
 import biblioteca.gestao.api.DTO.ListarUsuarioDTO;
 import biblioteca.gestao.api.model.Usuario;
@@ -27,6 +28,20 @@ public class UsuarioController {
 
     @GetMapping
     public Page<ListarUsuarioDTO> listar(Pageable paginacao){
-        return repository.findAll(paginacao).map(ListarUsuarioDTO::new);
+        return repository.findAllByAtivoTrue(paginacao).map(ListarUsuarioDTO::new);
+    }
+
+    @PutMapping("{id}")
+    @Transactional
+    public void atualizar(@RequestBody @Valid AtualizaUsuarioDTO usuarioDTO,@PathVariable Long id){
+        Usuario usuario = repository.getReferenceById(id);
+        usuario.atualizar(usuarioDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        Usuario usuario = repository.getReferenceById(id);
+        usuario.excluir();
     }
 }

@@ -20,4 +20,9 @@ public class Telefone {
         tel.numero = telefone.numero();
         return tel;
     }
+
+    public void atualizarTelefone(CadastroTelefoneDTO telefone) {
+        if(telefone.numero() != null)
+            this.numero = telefone.numero();
+    }
 }
