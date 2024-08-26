@@ -1,7 +1,6 @@
-package biblioteca.gestao.api.DTO.livro;
+package biblioteca.gestao.api.application.livro;
 
-import biblioteca.gestao.api.model.Categoria;
-import jakarta.validation.constraints.NotBlank;
+import biblioteca.gestao.api.domain.livro.Categoria;
 
 public record AtualizaLivroDTO(
         String titulo,

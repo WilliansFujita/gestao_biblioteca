@@ -1,8 +1,7 @@
-package biblioteca.gestao.api.DTO.livro;
+package biblioteca.gestao.api.application.livro;
 
-import biblioteca.gestao.api.model.Categoria;
+import biblioteca.gestao.api.domain.livro.Categoria;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 
 public record CadastroLivroDTO(
         @NotBlank

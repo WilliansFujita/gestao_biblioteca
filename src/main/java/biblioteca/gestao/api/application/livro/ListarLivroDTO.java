@@ -1,6 +1,6 @@
-package biblioteca.gestao.api.DTO.livro;
+package biblioteca.gestao.api.application.livro;
 
-import biblioteca.gestao.api.model.Livro;
+import biblioteca.gestao.api.domain.livro.Livro;
 
 import java.util.Date;
 

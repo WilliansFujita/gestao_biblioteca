@@ -1,11 +1,11 @@
-package biblioteca.gestao.api.controller;
+package biblioteca.gestao.api.infra.controller;
 
-import biblioteca.gestao.api.DTO.livro.AtualizaLivroDTO;
-import biblioteca.gestao.api.DTO.livro.CadastroLivroDTO;
-import biblioteca.gestao.api.DTO.livro.DadosDetalhamentoLivroDTO;
-import biblioteca.gestao.api.DTO.livro.ListarLivroDTO;
-import biblioteca.gestao.api.model.Livro;
-import biblioteca.gestao.api.repository.LivroRepository;
+import biblioteca.gestao.api.application.livro.AtualizaLivroDTO;
+import biblioteca.gestao.api.application.livro.CadastroLivroDTO;
+import biblioteca.gestao.api.application.livro.DadosDetalhamentoLivroDTO;
+import biblioteca.gestao.api.application.livro.ListarLivroDTO;
+import biblioteca.gestao.api.domain.livro.Livro;
+import biblioteca.gestao.api.infra.repository.LivroRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

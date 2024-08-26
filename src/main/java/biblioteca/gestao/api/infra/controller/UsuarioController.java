@@ -1,11 +1,11 @@
-package biblioteca.gestao.api.controller;
+package biblioteca.gestao.api.infra.controller;
 
-import biblioteca.gestao.api.DTO.usuario.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.DTO.usuario.CadastroUsuarioDTO;
-import biblioteca.gestao.api.DTO.usuario.DadosDetalhamentoUsuarioDTO;
-import biblioteca.gestao.api.DTO.usuario.ListarUsuarioDTO;
-import biblioteca.gestao.api.model.Usuario;
-import biblioteca.gestao.api.repository.UsuarioRepository;
+import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.DadosDetalhamentoUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.ListarUsuarioDTO;
+import biblioteca.gestao.api.domain.usuario.Usuario;
+import biblioteca.gestao.api.infra.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

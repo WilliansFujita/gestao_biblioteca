@@ -1,7 +1,7 @@
-package biblioteca.gestao.api.model;
+package biblioteca.gestao.api.domain.usuario;
 
-import biblioteca.gestao.api.DTO.usuario.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.DTO.usuario.CadastroUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,7 +1,6 @@
-package biblioteca.gestao.api.DTO.usuario;
+package biblioteca.gestao.api.application.usuario;
 
-import biblioteca.gestao.api.model.Telefone;
-import biblioteca.gestao.api.model.Usuario;
+import biblioteca.gestao.api.domain.usuario.Usuario;
 
 import java.util.Date;
 

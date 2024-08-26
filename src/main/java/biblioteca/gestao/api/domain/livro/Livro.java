@@ -1,7 +1,7 @@
-package biblioteca.gestao.api.model;
+package biblioteca.gestao.api.domain.livro;
 
-import biblioteca.gestao.api.DTO.livro.AtualizaLivroDTO;
-import biblioteca.gestao.api.DTO.livro.CadastroLivroDTO;
+import biblioteca.gestao.api.application.livro.AtualizaLivroDTO;
+import biblioteca.gestao.api.application.livro.CadastroLivroDTO;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

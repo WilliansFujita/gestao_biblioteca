@@ -1,6 +1,6 @@
-package biblioteca.gestao.api.model;
+package biblioteca.gestao.api.domain.usuario;
 
-import biblioteca.gestao.api.DTO.usuario.CadastroTelefoneDTO;
+import biblioteca.gestao.api.application.usuario.CadastroTelefoneDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

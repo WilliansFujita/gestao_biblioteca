@@ -1,4 +1,4 @@
-package biblioteca.gestao.api.DTO.usuario;
+package biblioteca.gestao.api.application.usuario;
 
 import jakarta.validation.constraints.NotBlank;
 
