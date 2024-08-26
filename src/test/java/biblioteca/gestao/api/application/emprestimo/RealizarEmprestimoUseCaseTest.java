@@ -36,7 +36,7 @@ public class RealizarEmprestimoUseCaseTest {
         Mockito.when(livroRepository.getReferenceById(Mockito.any()))
                 .thenReturn(livro);
 
-        Mockito.when(emprestimoRepository.findByIdLivroAndStatusTrue(Mockito.any()))
+        Mockito.when(emprestimoRepository.findByLivroId(Mockito.any()))
                 .thenReturn(null);
 
         Usuario usuario = new Usuario();
@@ -69,7 +69,7 @@ public class RealizarEmprestimoUseCaseTest {
                 .thenReturn(livro);
 
         Emprestimo emprestimo = new Emprestimo();
-        Mockito.when(emprestimoRepository.findByIdLivroAndStatusTrue(Mockito.any()))
+        Mockito.when(emprestimoRepository.findByLivroId(Mockito.any()))
                 .thenReturn(emprestimo);
 
         Usuario usuario = new Usuario();
