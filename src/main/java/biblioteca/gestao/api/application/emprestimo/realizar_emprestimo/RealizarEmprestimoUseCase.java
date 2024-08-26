@@ -1,7 +1,7 @@
-package biblioteca.gestao.api.application.emprestimo;
+package biblioteca.gestao.api.application.emprestimo.realizar_emprestimo;
 
-import biblioteca.gestao.api.application.emprestimo.dto.DetalharEmprestimoDTO;
-import biblioteca.gestao.api.application.emprestimo.dto.RealizarCadastroDTO;
+import biblioteca.gestao.api.application.emprestimo.realizar_emprestimo.dto.DetalharEmprestimoDTO;
+import biblioteca.gestao.api.application.emprestimo.realizar_emprestimo.dto.RealizarCadastroDTO;
 import biblioteca.gestao.api.domain.DomainException;
 import biblioteca.gestao.api.domain.emprestimo.Emprestimo;
 import biblioteca.gestao.api.domain.livro.Livro;

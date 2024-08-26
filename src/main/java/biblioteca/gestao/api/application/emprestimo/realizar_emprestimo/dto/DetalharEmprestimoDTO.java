@@ -1,4 +1,4 @@
-package biblioteca.gestao.api.application.emprestimo.dto;
+package biblioteca.gestao.api.application.emprestimo.realizar_emprestimo.dto;
 
 import biblioteca.gestao.api.domain.emprestimo.Emprestimo;
 
