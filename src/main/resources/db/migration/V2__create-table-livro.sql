@@ -1,0 +1,9 @@
+CREATE TABLE livros (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL UNIQUE,
+    isbn VARCHAR(100) NOT NULL UNIQUE,
+    author VARCHAR(100) NOT NULL ,
+    data_cadastro DATE DEFAULT CURRENT_DATE,
+    categoria VARCHAR(100) NOT NULL,
+    ativo BOOLEAN NOT NULL
+);
