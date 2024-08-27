@@ -2,6 +2,7 @@ package biblioteca.gestao.api.domain.usuario;
 
 import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.cadastrar.dto.CadastroUsuarioUseCaseInput;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,7 +28,7 @@ public class Usuario {
     @Embedded
     private Telefone telefone;
 
-    public static Usuario from(CadastroUsuarioDTO usuarioDTO) {
+    public static Usuario from(CadastroUsuarioUseCaseInput usuarioDTO) {
         Usuario usuario = new Usuario();
         usuario.nome = usuarioDTO.nome();
         usuario.dataCadastro = new Date();

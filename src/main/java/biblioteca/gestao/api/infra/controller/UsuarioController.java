@@ -4,6 +4,10 @@ import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.DadosDetalhamentoUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.ListarUsuarioDTO;
+import biblioteca.gestao.api.application.usuario.cadastrar.CadastrarUsuarioUseCase;
+import biblioteca.gestao.api.application.usuario.cadastrar.dto.CadastrarUsuarioUseCaseOutPut;
+import biblioteca.gestao.api.application.usuario.cadastrar.dto.CadastroUsuarioUseCaseInput;
+import biblioteca.gestao.api.domain.ValidationException;
 import biblioteca.gestao.api.domain.usuario.Usuario;
 import biblioteca.gestao.api.infra.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -22,15 +26,15 @@ public class UsuarioController {
     @Autowired
     UsuarioRepository repository;
 
+    @Autowired
+    CadastrarUsuarioUseCase cadastrarUsuarioUseCase;
+
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody @Valid CadastroUsuarioDTO usuarioDTO, UriComponentsBuilder uriBuilder){
-        Usuario usuario = Usuario.from(usuarioDTO);
-        repository.save(usuario);
-
-        var uri = uriBuilder.path("/usuarios/{id}").buildAndExpand(usuario.getId()).toUri();
-
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoUsuarioDTO(usuario));
+    public ResponseEntity cadastrar(@RequestBody @Valid CadastroUsuarioUseCaseInput input, UriComponentsBuilder uriBuilder) throws ValidationException {
+        CadastrarUsuarioUseCaseOutPut output = cadastrarUsuarioUseCase.execute(input);
+        var uri = uriBuilder.path("/usuarios/{id}").buildAndExpand(output.id()).toUri();
+        return ResponseEntity.created(uri).body(output);
     }
 
 

@@ -24,7 +24,7 @@ public class IndicacaoController {
     @Autowired
     IndicacaoLivrosUseCase indicacaoUseCase;
 
-    @PostMapping("/indica")
+    @PostMapping
     public ResponseEntity indicarLivros(@RequestBody IndicarLivrosUseCaseInputDTO dto){
         var output = indicacaoUseCase.execute(dto);
         return ResponseEntity.ok(output);

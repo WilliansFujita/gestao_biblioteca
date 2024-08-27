@@ -1,6 +1,7 @@
 package biblioteca.gestao.api.infra;
 
 import biblioteca.gestao.api.domain.DomainException;
+import biblioteca.gestao.api.domain.ValidationException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -23,6 +24,11 @@ public class TratadorErros {
 
     @ExceptionHandler(DomainException.class)
     public ResponseEntity tratarErroDomain(DomainException ex){
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity tratarErroDomainValidation(ValidationException ex){
         return ResponseEntity.badRequest().body(ex.getMessage());
     }
 }
