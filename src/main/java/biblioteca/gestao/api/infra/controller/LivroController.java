@@ -4,6 +4,10 @@ import biblioteca.gestao.api.application.livro.AtualizaLivroDTO;
 import biblioteca.gestao.api.application.livro.CadastroLivroDTO;
 import biblioteca.gestao.api.application.livro.DadosDetalhamentoLivroDTO;
 import biblioteca.gestao.api.application.livro.ListarLivroDTO;
+import biblioteca.gestao.api.application.livro.cadastrar.CadastrarLivroUseCase;
+import biblioteca.gestao.api.application.livro.cadastrar.dto.CadastrarLivroUseCaseInput;
+import biblioteca.gestao.api.application.livro.cadastrar.dto.CadastrarLivroUseCaseOutPut;
+import biblioteca.gestao.api.domain.ValidationException;
 import biblioteca.gestao.api.domain.livro.Livro;
 import biblioteca.gestao.api.infra.repository.LivroRepository;
 import jakarta.transaction.Transactional;
@@ -22,15 +26,18 @@ public class LivroController {
     @Autowired
     LivroRepository repository;
 
+    @Autowired
+    CadastrarLivroUseCase cadastrarLivroUseCase;
+
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody @Valid CadastroLivroDTO dados, UriComponentsBuilder uriBuilder){
-        Livro livro = Livro.from(dados);
-        repository.save(livro);
+    public ResponseEntity cadastrar(@RequestBody @Valid CadastrarLivroUseCaseInput dados, UriComponentsBuilder uriBuilder) throws ValidationException {
 
-        var uri = uriBuilder.path("/livros/{id}").buildAndExpand(livro.getId()).toUri();
+        CadastrarLivroUseCaseOutPut output = cadastrarLivroUseCase.execute(dados);
 
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoLivroDTO(livro));
+        var uri = uriBuilder.path("/livros/{id}").buildAndExpand(output.id()).toUri();
+
+        return ResponseEntity.created(uri).body(output);
 
     }
 

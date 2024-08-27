@@ -1,7 +1,6 @@
 package biblioteca.gestao.api.infra.controller;
 
 import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.DadosDetalhamentoUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.ListarUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.cadastrar.CadastrarUsuarioUseCase;

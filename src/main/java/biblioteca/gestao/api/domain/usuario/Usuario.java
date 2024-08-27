@@ -1,7 +1,6 @@
 package biblioteca.gestao.api.domain.usuario;
 
 import biblioteca.gestao.api.application.usuario.AtualizaUsuarioDTO;
-import biblioteca.gestao.api.application.usuario.CadastroUsuarioDTO;
 import biblioteca.gestao.api.application.usuario.cadastrar.dto.CadastroUsuarioUseCaseInput;
 import jakarta.persistence.*;
 import lombok.*;

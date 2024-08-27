@@ -2,6 +2,7 @@ package biblioteca.gestao.api.domain.livro;
 
 import biblioteca.gestao.api.application.livro.AtualizaLivroDTO;
 import biblioteca.gestao.api.application.livro.CadastroLivroDTO;
+import biblioteca.gestao.api.application.livro.cadastrar.dto.CadastrarLivroUseCaseInput;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,7 @@ public class Livro {
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
-    public static Livro from(@Valid CadastroLivroDTO dados) {
+    public static Livro from(@Valid CadastrarLivroUseCaseInput dados) {
         var livro = new Livro();
         livro.author = dados.author();
         livro.dataCadastro = new Date();
