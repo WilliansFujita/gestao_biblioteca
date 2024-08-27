@@ -8,7 +8,7 @@ public class ValidadorLivro extends Validation<Livro> {
     @Override
     public void validar(Livro livro) {
 
-        if(!livro.getIsbn().matches("^\\d{9}[\\dX]$") && !livro.getIsbn().matches("^\\d{13}$")){
+        if(!livro.getIsbn().matches( "^(?=(?:[^0-9]*[0-9]){10}(?:(?:[^0-9]*[0-9]){3})?$)[\\d-]+$")){
             erros.add("ISBN não é válido.");
             valido=false;
         }

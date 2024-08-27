@@ -1,7 +1,6 @@
 package biblioteca.gestao.api.infra.controller;
 
 import biblioteca.gestao.api.application.livro.AtualizaLivroDTO;
-import biblioteca.gestao.api.application.livro.CadastroLivroDTO;
 import biblioteca.gestao.api.application.livro.DadosDetalhamentoLivroDTO;
 import biblioteca.gestao.api.application.livro.ListarLivroDTO;
 import biblioteca.gestao.api.application.livro.cadastrar.CadastrarLivroUseCase;
